@@ -7,28 +7,11 @@
 \ifx\undefined\BibAnnote\long\def\BibAnnote#1{}\else\fi
 \ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
 
-\bibitem{book2}
+\bibitem{b1}
 \selectlanguageifdefined{english}
-\BibEmph{O.N,~D’Paola}. Performance visualization of parallel programs~/
-  D’Paola~O.N. ---
-\newblock University of Southampton, 1997.
-
-\bibitem{book3}
-\selectlanguageifdefined{english}
-\BibEmph{Haake~B.~Schauser~K.E.,~Scheiman~C.J.} Profiling a parallel language
-  based on fine-grained communication~/ Scheiman~C.J.~Haake~B., Schauser~K.E.
-  ---
-\newblock University of California, Santa Barbara, 2001.
-
-\bibitem{book4}
-\selectlanguageifdefined{english}
-Portable Instrumentation Library. ---
-\newblock \url{http://www.csm.ornl.gov/picl/index.html}.
-
-\bibitem{book6}
-\selectlanguageifdefined{english}
-\BibEmph{Дейт.,~К.~Дж.} Введение в системы баз
-  данных~/ К.~Дж.~Дейт. ---
-\newblock М.: «Вильямс», 2006.
+\BibEmph{Roorda~A.~Metha~A.,~Lennie P. Williams~D.} Packing arrangement of the
+  three cone classes in primate retina. Vision Research~/ Lennie P.
+  Williams~D.~Roorda~A., Metha~A. ---
+\newblock Elsevier Science Ltd, 2001.
 
 \end{thebibliography}

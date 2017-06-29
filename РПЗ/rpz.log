@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.5.21)  29 JUN 2017 15:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.5.21)  29 JUN 2017 20:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1010,12 +1010,23 @@ Package babel Info: Redefining russian shorthand "~
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./rpz.toc
-Underfull \hbox (badness 1320) in paragraph at lines 22--22
+Underfull \hbox (badness 1320) in paragraph at lines 26--26
  [][] [][][]\T2A/cmr/m/n/12 Необходимые усло^^?вия ис^^?поль^^?зо^^?ва^^?ния те
 х^^?но^^?ло^^?гии 
  []
 
-)
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 39.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 39.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 39.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 39.
+[2
+
+
+])
 \tf@toc=\write5
 \openout5 = `rpz.toc'.
 
@@ -1027,10 +1038,7 @@ Package babel Info: Redefining russian shorthand "|
 (babel)             in language append on input line 37.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language append on input line 37.
- [2
-
-
-]
+ [3]
 \openout2 = `1-intro.aux'.
 
  (./1-intro.tex
@@ -1046,7 +1054,7 @@ Package babel Info: Redefining russian shorthand "|
 (babel)             in language append on input line 14.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language append on input line 14.
- [3
+ [4
 
 
 ])
@@ -1058,7 +1066,7 @@ Package babel Info: Redefining russian shorthand "|
 (babel)             in language append on input line 37.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language append on input line 37.
- [4]
+ [5]
 \openout2 = `2-analysis.aux'.
 
  (./2-analysis.tex
@@ -1067,133 +1075,168 @@ Package babel Info: Redefining russian shorthand "|
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language append on input line 1.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 16.
+(babel)             in language append on input line 14.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 16.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 17.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 17.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 18.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 18.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 19.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 19.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 20.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 20.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 21.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 21.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 22.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 22.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 24.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 24.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 26.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 26.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 28.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 28.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 29.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 29.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 30.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 30.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 31.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 31.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 32.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 32.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 33.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 33.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 34.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 34.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 35.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 35.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 36.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 36.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 37.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 37.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 38.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 38.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 39.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 39.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 40.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 40.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 41.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 41.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 42.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 42.
+(babel)             in language append on input line 14.
 
-<img/img1.png, id=247, 292.09125pt x 405.515pt>
-File: img/img1.png Graphic file (type png)
- <use img/img1.png>
-Package pdftex.def Info: img/img1.png used on input line 48.
-(pdftex.def)             Requested size: 182.09486pt x 252.8151pt.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 51.
+(babel)             in language append on input line 17.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 51.
+(babel)             in language append on input line 17.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 51.
+(babel)             in language append on input line 20.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 51.
- [5
+(babel)             in language append on input line 20.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 22.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 22.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 22.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 22.
+ [6
 
 
 
 ]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 68.
+(babel)             in language append on input line 22.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 68.
+(babel)             in language append on input line 22.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language append on input line 68.
+(babel)             in language append on input line 23.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language append on input line 68.
-[6]
-Overfull \hbox (11.28903pt too wide) in paragraph at lines 74--101
+(babel)             in language append on input line 23.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 24.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 24.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 25.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 25.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 26.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 26.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 27.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 27.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 28.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 28.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 29.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 29.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 31.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 31.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 33.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 33.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 35.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 35.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 36.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 36.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 37.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 37.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 38.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 38.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 39.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 39.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 40.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 40.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 41.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 41.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 42.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 42.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 43.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 43.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 44.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 44.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 45.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 45.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 46.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 46.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 47.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 47.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 48.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 48.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 49.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 49.
+
+<img/img1.png, id=277, 292.09125pt x 405.515pt>
+File: img/img1.png Graphic file (type png)
+ <use img/img1.png>
+Package pdftex.def Info: img/img1.png used on input line 54.
+(pdftex.def)             Requested size: 182.09486pt x 252.8151pt.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 63.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 63.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 63.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 63.
+ [7]
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 63.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 63.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 63.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 63.
+ [8 <./img/img1.png>]
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 70.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 70.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language append on input line 70.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language append on input line 70.
+ [9]
+Overfull \hbox (11.28903pt too wide) in paragraph at lines 80--107
 [][] 
  []
 
@@ -1206,7 +1249,7 @@ Package babel Info: Redefining russian shorthand "|
 (babel)             in language append on input line 41.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language append on input line 41.
- [7 <./img/img1.png>]
+ [10]
 \openout2 = `3-design.aux'.
 
  (./3-design.tex
@@ -1243,7 +1286,7 @@ Package babel Info: Redefining russian shorthand "|
 (babel)             in language append on input line 42.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language append on input line 42.
- [8
+ [11
 
 
 
@@ -1277,7 +1320,7 @@ Package babel Info: Redefining russian shorthand "|
 (babel)             in language append on input line 43.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language append on input line 43.
- [9
+ [12
 
 
 
@@ -1302,7 +1345,7 @@ Package babel Info: Redefining russian shorthand "|
 (babel)             in language append on input line 44.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language append on input line 44.
- [10
+ [13
 
 
 
@@ -1323,7 +1366,7 @@ Package babel Info: Redefining russian shorthand "|
 (babel)             in language append on input line 50.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language append on input line 50.
- [11
+ [14
 
 
 
@@ -1336,16 +1379,7 @@ Package babel Info: Redefining russian shorthand "|
 (babel)             in language append on input line 1.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language append on input line 1.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 26.
-
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
-File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-)))
+))
 Package babel Info: Redefining russian shorthand "|
 (babel)             in language append on input line 52.
 Package babel Info: Redefining russian shorthand "~
@@ -1354,21 +1388,20 @@ Package babel Info: Redefining russian shorthand "|
 (babel)             in language append on input line 52.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language append on input line 52.
- [12
+ [15
 
 
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
-
-(./rpz.aux (./00-abstract.aux) (./1-intro.aux) (./2-analysis.aux)
-(./3-design.aux) (./4-impl.aux) (./5-research.aux) (./60-conclusion.aux)
-(./61-biblio.aux))
+ (./rpz.aux (./00-abstract.aux)
+(./1-intro.aux) (./2-analysis.aux) (./3-design.aux) (./4-impl.aux)
+(./5-research.aux) (./60-conclusion.aux) (./61-biblio.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
 Package rerunfilecheck Info: File `rpz.out' has not changed.
-(rerunfilecheck)             Checksum: 9B6109FE8D2FB17EEB40F0E613C53BEB;8373.
+(rerunfilecheck)             Checksum: 4F8E8C7CBAF7E16DC20C33BB799C1F2A;8970.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1376,11 +1409,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
- 26499 strings out of 493014
- 450949 string characters out of 6133351
- 527180 words of memory out of 5000000
- 29415 multiletter control sequences out of 15000+600000
- 16903 words of font info for 45 fonts, out of 8000000 for 9000
+ 26482 strings out of 493014
+ 450419 string characters out of 6133351
+ 529353 words of memory out of 5000000
+ 29400 multiletter control sequences out of 15000+600000
+ 16593 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,8n,84p,1808b,1657s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
@@ -1396,12 +1429,11 @@ al/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local
 /texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/t
 exlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on rpz.pdf (12 pages, 270223 bytes).
+ve/2016/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on rpz.pdf (15 pages, 246308 bytes).
 PDF statistics:
- 375 PDF objects out of 1000 (max. 8388607)
- 320 compressed objects within 4 object streams
- 72 named destinations out of 1000 (max. 500000)
- 422 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 402 PDF objects out of 1000 (max. 8388607)
+ 345 compressed objects within 4 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 454 words of extra memory for PDF output out of 10000 (max. 10000000)
 

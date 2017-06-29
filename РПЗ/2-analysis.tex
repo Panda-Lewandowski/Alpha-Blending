@@ -5,8 +5,6 @@
 %
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a mauris consequat, sagittis odio ut, tempor lacus. Donec rhoncus tincidunt ligula, vel egestas turpis vehicula interdum. Phasellus sit amet dignissim metus, quis rutrum metus. Nullam euismod dictum rhoncus. Vivamus bibendum gravida lacus, iaculis consectetur nunc suscipit ac. Aliquam erat volutpat. Nulla laoreet, elit vel lacinia egestas, metus erat sagittis orci, quis vulputate urna tellus ut felis. Morbi sit amet elit auctor, ultrices dui eu, elementum nisi.
 
-Proin at ipsum non nulla rutrum iaculis at eget sapien. Morbi rhoncus urna sed vulputate vulputate. Etiam gravida diam a sem egestas, eget tincidunt purus lobortis. Morbi eleifend elementum consectetur. Nullam nulla magna, pulvinar in quam non, fermentum placerat mi. Curabitur ut ullamcorper nibh. Morbi aliquet, lectus eu imperdiet imperdiet, mi erat interdum orci, fermentum aliquet libero eros nec nisl. Sed sagittis posuere mollis. Nunc sit amet ipsum id orci consequat molestie.
-
 % Обратите внимание, что включается не ../dia/..., а inc/dia/...
 % В Makefile есть соответствующее правило для inc/dia/*.pdf, которое
 % берет исходные файлы из ../dia в этом случае.
@@ -14,8 +12,19 @@ Proin at ipsum non nulla rutrum iaculis at eget sapien. Morbi rhoncus urna sed v
 
 
 \section{Теория цвета}
+Прежде всего, необходимо разобраться с тем, что такое цвет. Цвет -- это воприятие волн определённого рода электромагнитной энергии, которые после восприятия глазом и мозгом человека преобразуются в цветовые ощущения. Видимый человеком цвет возникает, с одной стороны, под влиянием объективного физического явления — света, с другой — в результате электромагнитного излучения различных частот на зрительный аппарат человека. Помимо этих факторов, на возникновение цветового ощущения человека влияют зрительный опыт и память, физиологические и психологические особенности.
+
 \subsection{Трёхкомпонентная теория цветовосприятия}
+Трёхкомпонентная теория цветовосприятия — теория, объясняющая цветовое зрение человека, основанное на восприятие трех основных компонентов цвета. Из научных опытов было обнаружено, что в сетчатке глаза человека есть три вида колбочек, максимумы чувствительности которых приходятся на красный, зелёный и синий участки спектра. \cite{b1}  Трёхсоставную теорию цветового зрения впервые высказал в 1756 году М. В. Ломоносов, когда он писал «о трёх материях дна ока». Сто лет спустя её развили немецкий и английский учёные Г. Гельмгольц и Т. Юнг. Параллельно существовала оппонентная теория цвета Эвальда Геринга, которая предполагла что в мозг поступает информацию о разнице яркости — о разнице яркости белого и чёрного, о разнице зелёного и красного цветов, о разнице синего и жёлтого цветов, где жёлтый цвет есть сумма красного и зелёного цветов.  На теории и трёх составляющих цвета и строится большинство цветовых моделей. 
+
 \subsection {Цветовые пространства и модели}
+Цветовая модель -- это способ представления цвета в виде кортежа некоторых его характеристик. Как правило, это три составляющие его компоненты, например красный, зелёный и синий или тон, насыщенность и яркость. Цветовое пространство же -- это представление цветового множества с помощью осей координат, где каждая ось преставляет возможные значения одной из компонент кортежа из цветовой модели. 
+
+\subsubsection{XYZ}
+
+\subsubsection{CMYK}
+\subsubsection{RGB}
+\subsubsection{Другие цветовые модели}
 \subsection{Методы смешивания цветов}
 \subsubsection{Аддитивный синтез}
 \subsubsection{Субтрактивный синтез}
@@ -29,7 +38,7 @@ Proin at ipsum non nulla rutrum iaculis at eget sapien. Morbi rhoncus urna sed v
 \subsection{}
 \section{Оптимизация вычислений}
 \subsection{Анализ существующих технологии оптимизации вычисления}
-\subsubsection{proc}
+\subsubsection{Технология SSE}
 \subsubsection{gpu}
 \subsubsection{аналитика}
 \subsection{Технология AVX}
@@ -43,8 +52,7 @@ Proin at ipsum non nulla rutrum iaculis at eget sapien. Morbi rhoncus urna sed v
 
 
 
-\begin{figure}[h!]
-	\centering
+\begin{figure}[ht!]
 	\includegraphics[width=0.4\textwidth]{img/img1.png}
 	\caption{Lorem ipsum dolor sit amet}
 	\label{fig:spire05}
@@ -59,7 +67,7 @@ S_{p0}=\frac{T_{0} }{T_{p}} \\
 S_{p}=\frac{T_{1} }{T_{p}}
 \label{F:101}
 \end{equation}
-где $T_{0}$ -- Lorem ipsum dolor sit amet, $T_{1}$ -- Lorem ipsum dolor sit amet, $T_{p}$ -- Lorem ipsum dolor sit ametLorem ipsum dolor sit amet \cite{book2}. 
+где $T_{0}$ -- Lorem ipsum dolor sit amet, $T_{1}$ -- Lorem ipsum dolor sit amet, $T_{p}$ -- Lorem ipsum dolor sit ametLorem ipsum dolor sit amet \cite{b1}. 
 
 Lorem ipsum dolor sit amet
 \begin{equation}

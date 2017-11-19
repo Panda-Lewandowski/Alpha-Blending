@@ -1,5 +1,39 @@
+\chapter{ Констукторский раздел}
+\label{cha:design}
 
+За основу возьмем открытый графический редактор KDE Krita (https://krita.org/en/). Основная логика операций с цветами заложена в шаблонном классе KoColorSpaceMaths в одноименных файлах. 
 
+\lstset{breaklines=true, numbers=left,
+	keywordstyle=\color{blue}, commentstyle=\color{gray}}
+\begin{lstlisting}[language=c++]
+/* _T -- некоторый целочисленный тип c известной спецификацией 
+* (миниальное/максимальное значение, начальное, нулевое значения, 
+* эпсилон-значение, длина в битах), которая должна быть определена 
+* в шаблонном классе KoColorSpaceMathsTraits через его явное определение.  
+* _Tdst -- выходной тип, необходим,  если выходной тип не совпадает
+*  с входным, иначе они равны */
+template < typename _T, typename _Tdst = _T >
+class KoColorSpaceMaths
+{
+    typedef KoColorSpaceMathsTraits<_T> traits;
+    typedef typename traits::compositetype src_compositetype;
+    typedef typename KoColorSpaceMathsTraits<_Tdst>::compositetype dst_compositetype;
+public:
+	// Перемножение двух чисел
+    inline static _Tdst multiply(_T a, _Tdst b);
+    // Перемножение трех чисел
+    inline static _Tdst multiply(_T a, _Tdst b, _Tdst c);
+    // Деление
+    inline static dst_compositetype divide(_T a, _Tdst b);
+    // Инверсия числа = начальное значение - текущее
+    inline static _T invert(_T a);
+    // 
+    inline static _T blend(_T a, _T b, _T alpha);
+    inline static _Tdst scaleToA(_T a);
+    inline static dst_compositetype clamp(dst_compositetype val);
+    inline static _Tdst clampAfterScale(dst_compositetype val);
+};
+\end{lstlisting}
 
 %%% Local Variables:
 

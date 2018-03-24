@@ -1,21 +1,48 @@
 \chapter{ Технологический раздел}
 \label{cha:design}
 
-Проведем оптимизацию смешения цветов в открытом графическом редакторе KDE Krita (https://krita.org/en/). 
+Проведем оптимизацию смешения цветов в открытом графическом редакторе KDE Krita (https://krita.org/). 
 
-\section{Необходимые типы данных}
-Vc::uint16\_v
-quint8
 
-%using uint16_16_v = Vc::SimdArray<quint16, Vc::uint16_v::size()>;
+\section{Выбор вспомогательных библиотек}
+Текущие компиляторы C++ могут выполнять автоматическое преобразование скалярных программ в инструкции SIMD (автовекторизация). Однако компилятор должен свойства алгоритма, который мог быть потерян, когда разработчик написал чисто скалярную реализацию в C++. Следовательно, компиляторы C++ не могут векторизовать какой-либо данный код в его наиболее эффективный параллельный вариант данных. Особенно большие параллельные данные, охватывающие несколько функцийи более, часто не будут преобразованы в эффективный код SIMD.
+
+Бибилиотека Vc помгает справится с этой задачей. Ее типы позволяют явно указывать параллельные операции с данными по нескольким значениям. Поэтому параллелизм добавляется через систему типов. Конкурирующие подходы определяют параллелизм через новые структуры управления и, следовательно, новую семантику внутри тела этих структур управления.
+
+Vc - это бесплатная библиотека программного обеспечения для упрощения явной векторизации кода на C++. Она имеет интуитивно понятный API и обеспечивает переносимость между различными компиляторами и версиями компилятора, а также переносимость между различными наборами векторных команд. 
+\cite{bib8}
+
+
+\section{Необходимые типы данных и классы}
+
+\begin{table}[h!]
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			Тип / Класс& Описание \\
+			\hline
+			\multicolumn{2}{|c|}{Библиотека Vc} \\
+			\hline
+			Vc::uint16\_v &  \\
+		   Vc::Implementation &  \\
+			Vc::SimdArray & uint32\_16\_v, int\_v\\
+			\hline
+			\multicolumn{2}{|c|}{Krita} \\
+			\hline
+			KoStreamedMath& \\
+			OptimizedOverCompositor32 &  \\
+			 KoDoubleOptimizedCompositeOpOver32 &  \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table} 
 
 \section{KoStreamMath}
 Основная логика работы с цветами происходит в модуле KoStreamMath. Чтобы определить новый класс, который позволит нам внедрить оптимизированное смешение в проект, напишем несколько основных функций,чьими прототипами послужат неоптимизированные функции.
 
 \subsection{fetch\_mask\_8\_uint16}
-Функция получает на вход вектор, содержащий первые Vc::uint16\_v::size() значений маски и упаковывает их в вектор. Функция является статичной, встраиваемой в код (inline) и принадлежит структуре KoStreamedMath.
-\lstset{breaklines=true, numbers=left,
-	keywordstyle=\color{blue}, commentstyle=\color{gray}}
+Функция получает на вход вектор, содержащий первые Vc::uint16\_v::size() значений маски и упаковывает их в вектор. Функция является статичной, встраиваемой в код (inline).
+
 \begin{lstlisting}[language=c++]
 static inline Vc::uint16_v fetch_mask_8_uint16(const quint8 *data) {
     Vc::uint16_v data_i(data);
@@ -29,86 +56,68 @@ static inline Vc::uint16_v fetch_mask_8_uint16(const quint8 *data) {
 \item Получение выровненных данных с невыровненной инструкцией ухудшает производительность.  
 \item Получение невыровненных данных с выровненной инструкцией вызывает \#GP (исключение общей защиты).
 \end{enumerate}
-\lstset{breaklines=true, numbers=left,
-	keywordstyle=\color{blue}, commentstyle=\color{gray}}
+
 \begin{lstlisting}[language=c++]
 template <bool aligned>
-static inline uint16_16_v fetch_alpha_uint16(const quint8 *data) {
-    uint32_16_v data_i;
+static inline uint16\_16\_v fetch\_alpha\_uint16(const quint8 *data) {
+    uint32\_16\_v data\_i;
    if (aligned) {
-       data_i.load((const quint32*)data, Vc::Aligned);
+       data\_i.load((const quint32*)data, Vc::Aligned);
    } else {
-       data_i.load((const quint32*)data, Vc::Unaligned);
+       data\_i.load((const quint32*)data, Vc::Unaligned);
    }
 
-   return uint16_16_v(data_i >> 24);
+   return uint16\_16\_v(data\_i >> 24);
 }
 \end{lstlisting}
 
 \subsection{fetch\_colors\_uint16}
 Аналогично предыдущим функциям-распаковкам.
-\lstset{breaklines=true, numbers=left,
-	keywordstyle=\color{blue}, commentstyle=\color{gray}}
+
 \begin{lstlisting}[language=c++]
 template <bool aligned>
-static inline void fetch_colors_uint16(const quint8 *data,
-                            Vc::uint16_v &c1,
-                            Vc::uint16_v &c2,
-                            Vc::uint16_v &c3) {
-    Vc::uint32_v data_i;
+static inline void fetch\_colors\_uint16(const quint8 *data,
+                            Vc::uint16\_v \&c1,
+                            Vc::uint16\_v \&c2,
+                            Vc::uint16\_v \&c3) {
+    Vc::uint32\_v data\_i;
     if (aligned) {
-        data_i.load((const quint32*)data, Vc::Aligned);
+        data\_i.load((const quint32*)data, Vc::Aligned);
     } else {
-        data_i.load((const quint32*)data, Vc::Unaligned);
+        data\_i.load((const quint32*)data, Vc::Unaligned);
     }
 
     const quint32 lowByteMask = 0xFF;
-    Vc::uint32_v mask(lowByteMask);
+    Vc::uint32\_v mask(lowByteMask);
 
-    c1 = Vc::uint16_v((data_i >> 16) & mask);
-    c2 = Vc::uint16_v((data_i >> 8)  & mask);
-    c3 = Vc::uint16_v(data_i         & mask);
+    c1 = Vc::uint16\_v((data\_i >> 16) \& mask);
+    c2 = Vc::uint16\_v((data\_i >> 8)  \& mask);
+    c3 = Vc::uint16\_v(data\_i         \& mask);
 }
 \end{lstlisting}
 
 \subsection{write\_channels\_uint16}
 Пакует цвет и альфа-значения в 4 канала по 8 бит на канал. Данные цвета хранятся в 3-х наименее значимых байтах пикселя, альфа - в наиболее значимом.
-\lstset{breaklines=true, numbers=left,
-	keywordstyle=\color{blue}, commentstyle=\color{gray}}
+
 \begin{lstlisting}[language=c++]
-static inline void write_channels_uint16(quint8 *data,
-                                     Vc::uint16_v::AsArg alpha,
-                                     Vc::uint16_v::AsArg c1,
-                                     Vc::uint16_v::AsArg c2,
-                                     Vc::uint16_v::AsArg c3) {
+static inline void write\_channels\_uint16(quint8 *data,
+                                     Vc::uint16\_v::AsArg alpha,
+                                     Vc::uint16\_v::AsArg c1,
+                                     Vc::uint16\_v::AsArg c2,
+                                     Vc::uint16\_v::AsArg c3) {
     const quint32 lowByteMask = 0xFF;
 
-    uint32_16_v mask(lowByteMask);
-    uint32_16_v v1 =   uint32_16_v(round(alpha)) << 24;
-    uint32_16_v v2 = ( uint32_16_v(Vc::round(c1)) & mask) << 16;
-    uint32_16_v v3 = ( uint32_16_v(Vc::round(c2)) & mask) <<  8;
-    uint32_16_v v4 =  uint32_16_v(Vc::round(c3))  & mask;
+    uint32\_16\_v mask(lowByteMask);
+    uint32\_16\_v v1 =   uint32\_16\_v(round(alpha)) << 24;
+    uint32\_16\_v v2 = ( uint32\_16\_v(Vc::round(c1)) \& mask) << 16;
+    uint32\_16\_v v3 = ( uint32\_16\_v(Vc::round(c2)) \& mask) <<  8;
+    uint32\_16\_v v4 =  uint32\_16\_v(Vc::round(c3))  \& mask;
     v1 = v1 | v2;
     v3 = v3 | v4;
     (v1 | v3).store((quint32*)data, Vc::Aligned);
 }
 \end{lstlisting}
 
-
-\section{KoColorSpaceMaths}
-Основная логика операций с цветами в Krita заложена в шаблонном классе KoColorSpaceMaths в одноименных файлах. 
-
-
-
-На момент написания данной работы KoColorSpaceMaths имеет несколько спецализаций: double, float, half, quint8, quint16. Для работы с RGBA* используетя quint8. Рассмотрим специализацию KoColorSpaceMaths для этого типа.
-
-
-Большинство функций реализовано через библиотеку KoIntegerMaths.
-Чтобы обеспечить полноценную работу с цветами, необходимо оптимизировать каждую из этих функций.
-Рассмотрим каждую функцию и способы ее оптимизации.
-
-
-\section{KoIntegerMaths}
 %Dmitry Kazakov, [Nov 26, 2017, 6:58:13 PM]:
 %Я бы начал с Баррета, а потом сказал бы, что мы просто добавляем округление к %операциям деления
 
@@ -118,41 +127,14 @@ static inline void write_channels_uint16(quint8 *data,
 
 %До формулы 2.2 все норм, а потом должен начаться Баррет.
 
-static inline Vc::uint16_v optimizedVectorMultiply(Vc::uint16_v a, Vc::uint16_v b)
-{
-    static const Vc::uint16_v offset(0x80u);
-    Vc::uint16_v c = a * b + offset;
-    return ((c >> 8) + c) >> 8;
-}
+\subsection{Умножение}
 
-static inline Vc::uint16_v optimizedVectorDevide(Vc::uint16_v a, Vc::uint16_v b)
-{
-    static const Vc::uint16_v part(2u);
-    Vc::uint16_v c = (a * UINT8_MAX + (b / part)) / b;
-    return c;
-}
-
-static inline Vc::uint16_v optimizedVectorBlend(Vc::uint16_v a, Vc::uint16_v b, Vc::uint16_v alpha)
-{
-    static const Vc::uint16_v offset(0x80u);
-    Vc::uint16_v c = (a - b) * alpha + offset;
-    c = ((c >> 8) + c) >> 8;
-    return c + b;
-}
-\subsection{UINT8\_MULT и UINT8\_MULT3}
-\lstset{breaklines=true, numbers=left,
-	keywordstyle=\color{blue}, commentstyle=\color{gray}}
 \begin{lstlisting}[language=c++]
-inline uint UINT8_MULT(uint a, uint b)
+static inline Vc::uint16\_v optimizedVectorMultiply(Vc::uint16\_v a, Vc::uint16\_v b)
 {
-uint c = a * b + 0x80u;
+static const Vc::uint16\_v offset(0x80u);
+Vc::uint16\_v c = a * b + offset;
 return ((c >> 8) + c) >> 8;
-}
-
-inline uint UINT8_MULT3(uint a, uint b, uint c)
-{
-uint t = a * b * c + 0x7F5B;
-return ((t >> 7) + t) >> 16;
 }
 \end{lstlisting}
 
@@ -197,30 +179,28 @@ result = ((c >> 8) + c) >> 8
 
 Доказательство данных  предположений можно вывести благодаря работе Барретта, представившего в 1986 году  "Сокращение Барретта", алгоритма быстрого вычисления числа по модулю \cite{bib7}.
 
-В  UINT8\_MULT3 используется похожая аппроксимация 
-\begin{equation}
-\frac{(a * b * c + 32512)}{65025.0}
-\end{equation}
 
-Данный алгоритм достаточно хорошо оптимизирован и не требует изменений. Несмотря на большее число проводимых операций, алгоритм тратит меньше тактов процессора, по сравнению с обычным делением по модулю.
-
-\subsection{UINT8\_DIVIDE}
+\subsection{Деление}
 \begin{lstlisting}[language=c++]
-inline uint UINT8_DIVIDE(uint a, uint b)
+static inline Vc::uint16\_v optimizedVectorDevide(Vc::uint16\_v a, Vc::uint16\_v b)
 {
-uint c = (a * UINT8_MAX + (b / 2u)) / b;
+static const Vc::uint16\_v part(2u);
+Vc::uint16\_v c = (a * UINT8\_MAX + (b / part)) / b;
 return c;
 }
 \end{lstlisting}
 
-\subsection{UINT8\_BLEND}
+\subsection{Смешение}
+\begin{lstlisting}[language=c++]
+static inline Vc::uint16\_v optimizedVectorBlend(Vc::uint16\_v a, Vc::uint16\_v b, Vc::uint16\_v alpha)
+{
+static const Vc::uint16\_v offset(0x80u);
+Vc::uint16\_v c = (a - b) * alpha + offset;
+c = ((c >> 8) + c) >> 8;
+return c + b;
+}
 
-
-\section{Библиотека Vc}
-
-
-
-
+\end{lstlisting}
 
 
 %%% Local Variables:
